@@ -27,9 +27,8 @@ public class Picture {
     @Column(name = "tag")
     private String tag;
 
-    @ManyToOne(targetEntity = User.class)
     @JoinColumn(name = "userId")
-    private User user;
+    private Long userId;
 
     @Override
     public String toString() {
@@ -38,7 +37,7 @@ public class Picture {
                 ", url='" + url + '\'' +
                 ", isAvailable=" + isAvailable +
                 ", tag='" + tag + '\'' +
-                ", user=" + user +
+                ", userId=" + userId +
                 '}';
     }
 }

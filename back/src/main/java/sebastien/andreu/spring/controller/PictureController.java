@@ -42,7 +42,7 @@ public class PictureController {
             if (userFound.isPresent()) {
                 Picture picture = new Picture();
                 picture.setTag(pictureDto.getTag());
-                picture.setUser(userFound.get());
+                picture.setUserId(pictureDto.getUserId());
 
 
                 /*
