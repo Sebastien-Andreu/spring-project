@@ -1,0 +1,34 @@
+<resources>
+
+    <string name="app_name">Tier list</string>
+
+    <string name="loginButton">Se connecter</string>
+    <string name="password">Mot de passe</string>
+    <string name="login">Identifiant</string>
+    <string name="email">Email</string>
+
+    <string name="cancel">annuler</string>
+    <string name="validate">valider</string>
+    <string name="edit">Modifier</string>
+
+    <string name="delete">supprimer</string>
+    <string name="register">S\'inscrire</string>
+
+    <string name="logoutConfirm">Voulez-vous vraiment vous déconnecter ?</string>
+    <string name="logoutLeaveApp">Voulez-vous vraiment quitter l\'application ?</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="deconnect">Se déconnecter</string>
+    <string name="addrIp">http://%s:%s</string>
+
+    <string name="input_failed">Veuillez remplir tout les champs ci-dessus</string>
+
+    <string name="UnknownHostException">l\'adresse IP / URL \' %s \' ou le port \' %s \' n\'est pas correcte !</string>
+    <string name="SocketTimeoutException">La connexion au serveur n\'a pas pu aboutir, veuillez vérifier que le serveur est bien ouvert et que les paramètres sont corrects</string>
+    <string name="errorServerRedColor">La connexion au serveur n\'a pas pu aboutir, veuillez vérifier que le serveur est bien ouvert, que les paramètres sont corrects et que vous êtes à porter</string>
+    <string name="the_connection_failed">La connexion a échoué</string>
+    <string name="add">Ajouter</string>
+
+    <string name="send_token">Bearer %s</string>
+
+</resources>

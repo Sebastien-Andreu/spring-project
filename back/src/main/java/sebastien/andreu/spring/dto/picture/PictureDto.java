@@ -12,6 +12,8 @@ import sebastien.andreu.spring.entity.User;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PictureDto {
+    private Long pictureId;
     private String tag;
     private Long userId;
+    private Long rankId;
 }

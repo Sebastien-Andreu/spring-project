@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_15sdp">
+
+                <sebastien.andreu.esimed.shared.custom.CustomEditTextRounded
+                    android:id="@+id/editTextName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:nextFocusDown="@id/editTextSurname"
+                    app:title="Nom"
+                    app:titleColor="@color/black"
+                    app:editTextBackgroundColor="#FFFFFF"
+                    app:editTextBorderColor="@color/orange"
+                    app:editTextColor="@color/black"
+                    app:editTextHeight="@dimen/_45sdp"
+                    app:editTextSize="@dimen/_7sdp" />
+
+                <sebastien.andreu.esimed.shared.custom.CustomEditTextRounded
+                    android:id="@+id/editTextSurname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:title="Prénom"
+                    app:titleColor="@color/black"
+                    app:editTextBackgroundColor="#FFFFFF"
+                    app:editTextBorderColor="@color/orange"
+                    app:editTextColor="@color/black"
+                    app:editTextHeight="@dimen/_45sdp"
+                    app:editTextSize="@dimen/_7sdp" />
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <sebastien.andreu.esimed.shared.custom.CustomEditTextRounded
+                android:id="@+id/editTextBirthday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:layout_weight="1"
+                app:title="Date naissance"
+                app:editTextBackgroundColor="#FFFFFF"
+                app:editTextBorderColor="@color/orange"
+                app:editTextColor="@color/black"
+                app:editTextHeight="@dimen/_45sdp"
+                app:editTextSize="@dimen/_7sdp"
+                app:titleColor="@color/black" />
+
+            <sebastien.andreu.esimed.shared.custom.CustomEditTextRounded
+                android:id="@+id/editTextTelNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="numberSigned"
+                app:title="Num. téléphone"
+                app:titleColor="@color/black"
+                app:editTextBackgroundColor="#FFFFFF"
+                app:editTextBorderColor="@color/orange"
+                app:editTextColor="@color/black"
+                app:editTextHeight="@dimen/_45sdp"
+                app:editTextSize="@dimen/_7sdp" />
+
+        </LinearLayout>
+
+
+
+            <sebastien.andreu.esimed.shared.custom.CustomEditTextRounded
+                android:id="@+id/editTextAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="Adresse"
+                app:titleColor="@color/black"
+                app:editTextBackgroundColor="#FFFFFF"
+                app:editTextBorderColor="@color/orange"
+                app:editTextColor="@color/black"
+                app:editTextHeight="@dimen/_45sdp"
+                app:editTextSize="@dimen/_7sdp" />
+
+            <sebastien.andreu.esimed.shared.custom.CustomEditTextRounded
+                android:id="@+id/editTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                app:title="Email"
+                app:titleColor="@color/black"
+                app:editTextBackgroundColor="#FFFFFF"
+                app:editTextBorderColor="@color/orange"
+                app:editTextColor="@color/black"
+                app:editTextHeight="@dimen/_45sdp"
+                app:editTextSize="@dimen/_7sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <sebastien.andreu.esimed.shared.custom.CustomEditTextRounded
+                    android:id="@+id/editTextCAMax"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:inputType="numberDecimal"
+                    app:title="CA max"
+                    app:titleColor="@color/black"
+                    app:editTextBackgroundColor="#FFFFFF"
+                    app:editTextBorderColor="@color/orange"
+                    app:editTextColor="@color/black"
+                    app:editTextHeight="@dimen/_45sdp"
+                    app:editTextSize="@dimen/_7sdp" />
+
+                <sebastien.andreu.esimed.shared.custom.CustomEditTextRounded
+                    android:id="@+id/editTextTauxCharge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:inputType="numberDecimal"
+                    app:title="Taux de charge"
+                    app:titleColor="@color/black"
+                    app:editTextBackgroundColor="#FFFFFF"
+                    app:editTextBorderColor="@color/orange"
+                    app:editTextColor="@color/black"
+                    app:editTextHeight="@dimen/_45sdp"
+                    app:editTextSize="@dimen/_7sdp" />
+            </LinearLayout>
+
+            <sebastien.andreu.esimed.shared.custom.CustomEditTextRounded
+                android:id="@+id/editTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                app:title="Mot de passe"
+                app:titleColor="@color/black"
+                app:editTextBackgroundColor="#FFFFFF"
+                app:editTextBorderColor="@color/orange"
+                app:editTextColor="@color/black"
+                app:editTextHeight="@dimen/_45sdp"
+                app:editTextSize="@dimen/_7sdp" />
+
+            <Button
+                android:id="@+id/buttonRegister"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:text="@string/register" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

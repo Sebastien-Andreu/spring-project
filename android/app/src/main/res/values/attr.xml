@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomEditTextRounded" parent="EditText">
+        <attr name="title" format="string"/>
+        <attr name="titleColor" format="color"/>
+        <attr name="titleMargin" format="dimension"/>
+        <attr name="titleBackground" format="color"/>
+
+        <attr name="editTextBackgroundColor" format="color"/>
+        <attr name="editTextRadius" format="dimension"/>
+        <attr name="editTextBorderColor" format="color"/>
+        <attr name="editTextBorderWidth" format="dimension"/>
+        <attr name="editTextHeight" format="dimension"/>
+        <attr name="editTextHint" format="string"/>
+        <attr name="editTextSize" format="dimension"/>
+        <attr name="editTextColor" format="color"/>
+        <attr name="android:inputType"/>
+        <attr name="android:enabled"/>
+    </declare-styleable>
+</resources>
