@@ -5,12 +5,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AddPictureDto {
-    private List<PictureDto> list;
+public class PictureDownload {
+    private Long pictureId;
 }

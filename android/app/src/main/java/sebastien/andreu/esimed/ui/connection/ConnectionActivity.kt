@@ -11,7 +11,7 @@ import sebastien.andreu.esimed.shared.custom.CustomEditTextRounded
 import sebastien.andreu.esimed.shared.toolbar.CustomToolBar
 import sebastien.andreu.esimed.shared.view.dialog.DialogLeaveApp
 import sebastien.andreu.esimed.shared.view.dialog.listener.ListenerDialog
-import sebastien.andreu.esimed.ui.client.ClientActivity
+import sebastien.andreu.esimed.ui.home.HomeActivity
 import sebastien.andreu.esimed.ui.register.RegisterActivity
 import sebastien.andreu.esimed.utils.ToastUtils
 import sebastien.andreu.esimed.utils.Token
@@ -34,7 +34,7 @@ class ConnectionActivity: AppCompatActivity() {
             when (it.status) {
                 Status.SUCCESS -> {
                     Token.value = it.message
-                    ClientActivity.start(this)
+                    HomeActivity.start(this)
                 }
 
                 Status.ERROR -> {

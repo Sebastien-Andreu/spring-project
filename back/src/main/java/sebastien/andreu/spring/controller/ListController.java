@@ -42,8 +42,8 @@ public class ListController {
                 list.setTitle(listDto.getTitle());
                 list.setUserId(userFound.get().getUserId());
                 listRepository.save(list);
-                response.put("message", "List enregistrée avec succès");
-                response.put("user", list.toString());
+                response.put("message", "Tier list enregistrée avec succès");
+                response.put("list", list.toString());
                 return new ResponseEntity<>(response, HttpStatus.OK);
             } else {
                 throw new Exception("User ID not found");
@@ -70,8 +70,6 @@ public class ListController {
                     listRepository.save(existingList);
 
                     response.put("message", "List mise à jour avec succès");
-                    response.put("list", existingList.toString());
-
                     return new ResponseEntity<>(response, HttpStatus.OK);
                 } else {
                     throw new Exception("this list does not belong to this user");
@@ -85,8 +83,9 @@ public class ListController {
         }
     }
 
-    @GetMapping(path = "", produces = "application/json")
-    public Optional<java.util.List<List>> getUserLists(@RequestBody ListGetDto listGetDto) {
-        return listRepository.findByUserId(listGetDto.getUserId());
+    @GetMapping(path = "/user/{userId}", produces = "application/json")
+    public Optional<java.util.List<List>> getUserLists(@PathVariable Long userId) {
+        System.out.println(listRepository.findByUserId(userId));
+        return listRepository.findByUserId(userId);
     }
 }

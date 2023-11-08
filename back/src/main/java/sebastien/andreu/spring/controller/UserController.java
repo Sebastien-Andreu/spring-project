@@ -90,6 +90,7 @@ public class UserController {
 
             String token = jwtUtil.createToken(user);
             response.put("token", token);
+            response.put("user", user.toString());
             return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception e) {
             response.put("error", e.getMessage());

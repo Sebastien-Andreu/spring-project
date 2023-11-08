@@ -18,7 +18,6 @@ public class Rank {
     @Column(name = "rankId")
     private Long rankId;
 
-
     private String title;
 
     @JoinColumn(name = "listId")
@@ -29,11 +28,11 @@ public class Rank {
 
     @Override
     public String toString() {
-        return "Rank{" +
-                "rankId=" + rankId +
-                ", title='" + title + '\'' +
-                ", listId=" + listId +
-                ", ordering=" + ordering +
+        return "{" +
+                "\"rankId\":" + rankId +
+                ", \"title\":\"" + title + '\"' +
+                ", \"listId\":" + listId +
+                ", \"ordering\":" + ordering +
                 '}';
     }
 }

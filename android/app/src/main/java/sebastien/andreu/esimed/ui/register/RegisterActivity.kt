@@ -43,19 +43,10 @@ class RegisterActivity: AppCompatActivity() {
             }
         }
 
-        findViewById<CustomEditTextRounded>(R.id.editTextTauxCharge)?.setFilter(InputFilterMinMax(0,100))
-
-
         findViewById<Button>(R.id.buttonRegister)?.setOnClickListener {
             User(
-                name = findViewById<CustomEditTextRounded>(R.id.editTextName).getValue(),
-                surname = findViewById<CustomEditTextRounded>(R.id.editTextSurname).getValue(),
-                birthday = findViewById<CustomEditTextRounded>(R.id.editTextBirthday).getValue(),
-                address = findViewById<CustomEditTextRounded>(R.id.editTextAddress).getValue(),
+                pseudo = findViewById<CustomEditTextRounded>(R.id.editTextPseudo).getValue(),
                 email = findViewById<CustomEditTextRounded>(R.id.editTextEmail).getValue(),
-                tel = findViewById<CustomEditTextRounded>(R.id.editTextTelNumber).getValue(),
-                caMax = findViewById<CustomEditTextRounded>(R.id.editTextCAMax).getValue(),
-                tauxCharge = findViewById<CustomEditTextRounded>(R.id.editTextTauxCharge).getValue(),
                 password = findViewById<CustomEditTextRounded>(R.id.editTextPassword).getValue()
             ).let { user ->
                 if (user.allDataIsValid()) {

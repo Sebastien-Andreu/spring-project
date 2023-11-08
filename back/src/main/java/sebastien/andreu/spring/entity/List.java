@@ -32,12 +32,12 @@ public class List {
 
     @Override
     public String toString() {
-        return "List{" +
-                "listId=" + listId +
-                ", title='" + title + '\'' +
-                ", tag='" + tag + '\'' +
-                ", updateTime='" + updateTime + '\'' +
-                ", userId=" + userId +
+        return "{" +
+                "\"listId\":" + listId +
+                ", \"title\":\"" + title + '\"' +
+                ", \"tag\":\"" + tag + '\"' +
+                ", \"updateTime\":\"" + updateTime + '\"' +
+                ", \"userId\":" + userId +
                 '}';
     }
 }
