@@ -4,9 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sebastien.andreu.spring.dto.list.ListDto;
-import sebastien.andreu.spring.dto.picture.PictureByList;
-import sebastien.andreu.spring.dto.picture.PictureByUser;
-import sebastien.andreu.spring.dto.picture.PictureDto;
+import sebastien.andreu.spring.dto.picture.*;
 import sebastien.andreu.spring.entity.Picture;
 import sebastien.andreu.spring.entity.User;
 import sebastien.andreu.spring.repository.PictureRepository;
@@ -35,30 +33,47 @@ public class PictureController {
     }
 
     @PostMapping(path = "", produces = "application/json")
-    public @ResponseBody ResponseEntity<Map<String, String>> createList(@RequestBody PictureDto pictureDto) {
+    public @ResponseBody ResponseEntity<Map<String, String>> addPictures(@RequestBody AddPictureDto addPictureDto) {
         Map<String, String> response = new HashMap<>();
-        try {
+        addPictureDto.getList().forEach(pictureDto -> {
             Optional<User> userFound = userRepository.findById(pictureDto.getUserId());
             if (userFound.isPresent()) {
                 Picture picture = new Picture();
                 picture.setTag(pictureDto.getTag());
                 picture.setUserId(pictureDto.getUserId());
-
-
-                /*
-                * IL FAUT FAIRE L'implementation de l'image stockage etc
-                * */
-
                 pictureRepository.save(picture);
-                response.put("message", "List enregistrée avec succès");
-                response.put("user", picture.toString());
-                return new ResponseEntity<>(response, HttpStatus.OK);
+
+                response.put("message", "Picture enregistrée avec succès");
             } else {
-                throw new Exception("User ID not found");
+                response.put("error", "User Id not found");
             }
-        } catch (Exception e) {
-            response.put("error", e.getMessage());
+        });
+
+        if (response.containsKey("error")) {
             return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+        } else {
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        }
+    }
+
+    @DeleteMapping(path = "", produces = "application/json")
+    public @ResponseBody ResponseEntity<Map<String, String>> deletePictures(@RequestBody DeletePictureDto deletePictureDto) {
+        Map<String, String> response = new HashMap<>();
+
+        deletePictureDto.getList().forEach(pictureDtoDelete -> {
+            Optional<Picture> picture = pictureRepository.findById(pictureDtoDelete.getPictureId());
+            if (picture.isPresent()) {
+                pictureRepository.delete(picture.get());
+                response.put("message", "Picture suprimée avec succès");
+            } else {
+                response.put("error", "Picture Id not found");
+            }
+        });
+
+        if (response.containsKey("error")) {
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+        } else {
+            return new ResponseEntity<>(response, HttpStatus.OK);
         }
     }
 }

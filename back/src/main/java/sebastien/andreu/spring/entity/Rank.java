@@ -17,11 +17,12 @@ public class Rank {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "rankId")
     private Long rankId;
+
+
     private String title;
 
-    @ManyToOne(targetEntity = List.class)
     @JoinColumn(name = "listId")
-    private List list;
+    private Long listId;
 
     @Column(name = "ordering")
     private int ordering;
@@ -31,7 +32,7 @@ public class Rank {
         return "Rank{" +
                 "rankId=" + rankId +
                 ", title='" + title + '\'' +
-                ", list=" + list +
+                ", listId=" + listId +
                 ", ordering=" + ordering +
                 '}';
     }

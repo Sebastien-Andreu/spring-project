@@ -96,15 +96,4 @@ public class UserController {
             return new ResponseEntity(response, HttpStatus.BAD_REQUEST);
         }
     }
-
-
-    @GetMapping(path = "/test", produces = "application/json")
-    public ResponseEntity<String> authenticateUser() {
-        return new ResponseEntity<String>("test", HttpStatus.OK);
-    }
-
-    @GetMapping(path = "/test2", produces = "application/json")
-    public ResponseEntity<String> authenticateUser2() {
-        return new ResponseEntity<String>("test2", HttpStatus.OK);
-    }
 }

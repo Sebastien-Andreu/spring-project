@@ -18,11 +18,9 @@ public class PictureStock {
     @Column(name = "pictureStockId")
     private Long id;
 
-    @ManyToOne(targetEntity = Rank.class)
     @JoinColumn(name = "rankId")
-    private Rank rank;
+    private Long rankId;
 
-    @ManyToOne(targetEntity = Picture.class)
     @JoinColumn(name = "pictureId")
-    private Picture picture;
+    private Long pictureId;
 }

@@ -1,0 +1,16 @@
+package sebastien.andreu.spring.dto.picture;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.List;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class DeletePictureDto {
+    private List<PictureDtoDelete> list;
+}
