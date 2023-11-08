@@ -25,4 +25,14 @@ public class Rank {
 
     @Column(name = "ordering")
     private int ordering;
+
+    @Override
+    public String toString() {
+        return "Rank{" +
+                "rankId=" + rankId +
+                ", title='" + title + '\'' +
+                ", list=" + list +
+                ", ordering=" + ordering +
+                '}';
+    }
 }

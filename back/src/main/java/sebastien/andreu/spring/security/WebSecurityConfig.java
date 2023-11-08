@@ -40,7 +40,7 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests((authorize) -> authorize
                         .requestMatchers("/login", "/signup").permitAll()
                         .requestMatchers("/test").hasAuthority("ADMIN")
-                        .requestMatchers("/test2").hasAuthority("USER")
+                        .requestMatchers("/api/list", "/api/list/*", "/api/list/**").hasAuthority("USER")
                         .anyRequest().authenticated()
                         .and().addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class)
                 )

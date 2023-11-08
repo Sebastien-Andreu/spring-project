@@ -30,4 +30,15 @@ public class Picture {
     @ManyToOne(targetEntity = User.class)
     @JoinColumn(name = "userId")
     private User user;
+
+    @Override
+    public String toString() {
+        return "Picture{" +
+                "pictureId=" + pictureId +
+                ", url='" + url + '\'' +
+                ", isAvailable=" + isAvailable +
+                ", tag='" + tag + '\'' +
+                ", user=" + user +
+                '}';
+    }
 }

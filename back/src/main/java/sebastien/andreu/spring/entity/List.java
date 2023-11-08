@@ -27,7 +27,17 @@ public class List {
     @Column(name = "updateTime")
     private String updateTime;
 
-    @ManyToOne(targetEntity = User.class)
     @JoinColumn(name = "userId")
-    private User user;
+    private Long userId;
+
+    @Override
+    public String toString() {
+        return "List{" +
+                "listId=" + listId +
+                ", title='" + title + '\'' +
+                ", tag='" + tag + '\'' +
+                ", updateTime='" + updateTime + '\'' +
+                ", userId=" + userId +
+                '}';
+    }
 }

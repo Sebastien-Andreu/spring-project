@@ -18,4 +18,12 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long roleId;
     private String name;
+
+    @Override
+    public String toString() {
+        return "Role{" +
+                "roleId=" + roleId +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
